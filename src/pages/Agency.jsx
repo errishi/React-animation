@@ -1,27 +1,58 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import React, { useRef } from 'react'
+import { assets } from '../assets/assets.js';
 
 const Agency = () => {
+  gsap.registerPlugin(ScrollTrigger);
   const imageDivRef = useRef(null);       //it is use to select element like in pure js document.queryselector
+  const imageRef = useRef(null);
+
+  const imageArray = [
+    assets.image_1, assets.image_2, assets.image_3, assets.image_4, assets.image_5, assets.image_6, assets.image_7, assets.image_8, assets.image_9, assets.image_10, assets.image_11, assets.image_12, assets.image_13, assets.image_14
+  ];
+
+  useGSAP(function(){
+    gsap.to(imageDivRef.current, {
+      scrollTrigger: {
+        trigger: imageDivRef.current,
+        markers: true,
+        start: "top 19.6%",
+        end: "top -225%",
+        pin: true,
+        onUpdate: function(elem){
+          let imageIndex;
+          if (elem.progress < 1) {
+            imageIndex = Math.floor(elem.progress * imageArray.length);
+          }else{
+            imageIndex = imageArray.length - 1;
+          }
+          imageRef.current.src = imageArray[imageIndex];
+        }
+      }
+    });
+  });
 
   return (
     <div>
     <div className='section1'>
-      <div className='h-70 w-52 absolute top-27 left-106 overflow-hidden rounded-3xl'>
-        <img className='h-full w-full object-cover' src="https://k72.ca/images/teamMembers/Carl_480x640.jpg?w=480&h=640&fit=crop&s=f0a84706bc91a6f505e8ad35f520f0b7" alt="image" />
+      <div ref={imageDivRef} className='h-70 w-52 absolute top-27 left-106 overflow-hidden rounded-3xl'>
+        <img ref={imageRef} className='h-full w-full object-cover' src="image-1.jpg" alt="image" />
       </div>
       <div className='font-[font2] relative'>
         <div className='mt-[23vw]'>
           <h1 className='text-[20vw] text-center uppercase leading-[18vw]'>SEVEN7Y <br />
             TWO</h1>
         </div>
-        <div className='pl-[40%]'>
+        <div className='pl-[44%]'>
           <p className='text-6xl'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We’re inquisitive and open-minded, and we make sure creativity crowds out ego from every corner. A brand is a living thing, with values, a personality and a story. If we ignore that, we can achieve short-term success, but not influence that goes the distance. We bring that perspective to every brand story we help tell.</p>
         </div>
       </div>
     </div>
     <div className='section2 h-screen'>
       <div className='font-[font2] relative mx-[10vw]'>
-        <div className='mt-[23vw] flex gap-85'>
+        <div className='mt-[15vw] flex gap-85'>
           <div>
           <p className='text-xl'>Expertise</p>
           </div>
