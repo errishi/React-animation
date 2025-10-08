@@ -43,3 +43,19 @@ export const navImg = {
     nav_image_4,
     nav_image_5
 }
+
+import thumbnail_img_1 from "./OKA_thumbnail.jpg";
+import thumbnail_img_2 from "./CF_thumbnail_5.jpg";
+import thumbnail_img_3 from "./opto_thumbnail2.jpg";
+import thumbnail_img_4 from "./thumbnail_3.jpg";
+import thumbnail_img_5 from "./thumbnail_6.jpg";
+import thumbnail_img_6 from "./thumbnailimage_4.jpg";
+
+export const thumbnail = {
+    thumbnail_img_1,
+    thumbnail_img_2,
+    thumbnail_img_3,
+    thumbnail_img_4,
+    thumbnail_img_5,
+    thumbnail_img_6
+}
