@@ -29,3 +29,17 @@ export const assets = {
     image_13,
     image_14
 }
+
+import nav_image_1 from "./nav-image-1.jpg";
+import nav_image_2 from "./nav-image-2.jpg";
+import nav_image_3 from "./nav-gif-3.gif";
+import nav_image_4 from "./nav-image-4.jpg";
+import nav_image_5 from "./nav-image-5.png";
+
+export const navImg = {
+    nav_image_1,
+    nav_image_2,
+    nav_image_3,
+    nav_image_4,
+    nav_image_5
+}
