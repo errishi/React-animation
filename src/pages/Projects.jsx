@@ -7,11 +7,11 @@ import { ScrollTrigger } from 'gsap/all';
 
 const Projects = () => {
   const projects = [{
-    image1:navImg.nav_image_5,
-    image2:navImg.nav_image_1
-  },{
     image1:navImg.nav_image_2,
     image2:thumbnail.thumbnail_img_1
+  },{
+    image1:navImg.nav_image_5,
+    image2:navImg.nav_image_1
   },{
     image1: thumbnail.thumbnail_img_2,
     image2: thumbnail.thumbnail_img_3
@@ -45,10 +45,10 @@ const Projects = () => {
       <div className='pt-[40vh]'>
         <h2 className='font-[font2] lg:text-[10.5vw] text-6xl uppercase'>Projects</h2>
       </div>
-      <div className='lg:-mt-10 lol'>
+      <div className='-lg:mt-10 lol'>
         {projects.map(function(elem, idx){
           return (
-            <div key={idx} className='hero w-full h-[300px] lg:mb-4 mb-2 lg:gap-4 gap-2 flex'>
+            <div key={idx} className='hero w-full h-[300px] lg:mb-4 mb-2 lg:gap-4 gap-2 flex lg:flex-row flex-col'>
               <ProjectCard image1={elem.image1} image2={elem.image2} />
             </div>
           ) 
