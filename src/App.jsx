@@ -5,6 +5,7 @@ import Projects from './pages/Projects';
 import Agency from './pages/Agency';
 import Navbar from './components/Navigation/Navbar';
 import FullScreenNav from './components/Navigation/FullScreenNav';
+import NotFound from './pages/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/agency' element={<Agency />} />
+        <Route path='*' element={<NotFound/>} />
       </Routes>
     </>
   )
